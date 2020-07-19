@@ -1,0 +1,13 @@
+<!--
+ - Created by Rick Baker on 6/19/2020.
+ -->
+<aura:component>
+    <aura:attribute name="campingItems" type="Camping_Item__c[]" />
+    <lightning:card title="Camping Items">
+        <p class="slds-p-horizontal--small">
+            <aura:iteration items="{!v.campingItems}" var="item">
+                <c:campingListItem item="{!item}" />
+            </aura:iteration>
+        </p>
+    </lightning:card>
+</aura:component>

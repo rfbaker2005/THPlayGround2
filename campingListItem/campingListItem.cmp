@@ -1,0 +1,23 @@
+<aura:component>
+    <aura:attribute name="item" type="Camping_Item__c" />
+
+    <!-- Here is where we register the event we will send to update a Camping_Item__c record -->
+    <aura:registerEvent name="updateItem" type="c:addItemEvent" />
+
+    <h2>
+        <p class="slds-p-horizontal--small">
+            Name: {!v.item.Name}
+        </p>
+    </h2> 
+    
+    Price
+    <lightning:formattedNumber value="{! v.item.Price__c }" style="currency" />
+
+    Quantity
+    <lightning:formattedNumber value="{! v.item.Quantity__c }" maximumFractionDigits="0" />
+
+    Packed
+    <lightning:input type="toggle" label="Packed" name="itemPacked" class="slds-p-around--small"
+        checked="{! v.item.Packed__c }" messageToggleActive="Yes" messageToggleInactive="No" onchange="{!c.clickPacked}" />
+
+    </aura:component>
